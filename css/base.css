@@ -216,6 +216,13 @@ button:focus-visible {
   height: 16px;
 }
 
+/* Clareia o ícone de seta no tema escuro, já que a cor original está
+   gravada no SVG e não é acessível via CSS normalmente (mesmo caso do
+   ícone da lua no header.css) */
+[data-theme="dark"] .link-arrow img {
+  filter: brightness(0) invert(1);
+}
+
 .badge {
   background-color: var(--color-surface);
   border: 1px solid var(--color-text-secondary);
