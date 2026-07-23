@@ -1,4 +1,82 @@
 /* ==========================================================================
    FORMACAO.CSS
-   Estilos da seção "formacao" — a preencher.
+   Seção "Formação & Certificações": timeline vertical com linha e
+   pontos, mesmo layout em desktop e mobile (não precisa de breakpoint).
    ========================================================================== */
+
+.formacao {
+  padding-block: var(--space-section);
+}
+
+.timeline {
+  position: relative;
+  margin-top: 2.5rem;
+  max-width: 640px;
+}
+
+.timeline__item {
+  position: relative;
+  padding-left: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+/* Linha vertical: desenhada item por item, formando uma linha contínua
+   já que o final de um item encosta no início do próximo */
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: color-mix(in srgb, var(--color-text) 15%, transparent);
+}
+
+.timeline__item:last-child::before {
+  bottom: auto;
+  height: 0.3rem; /* a linha para no ponto do último item, não continua */
+}
+
+/* Ponto na linha, com uma borda na cor de fundo para criar um "halo"
+   separando o ponto da linha atrás dele */
+.timeline__item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: 3px solid var(--color-bg);
+  z-index: 1;
+}
+
+.timeline__data {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.timeline__item h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline__item p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Espaço entre o título e as tags de especialização do último item */
+.timeline__tags {
+  margin-top: 0.5rem;
+}
