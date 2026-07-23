@@ -1,4 +1,42 @@
 /* ==========================================================================
    SOBRE.CSS
-   Estilos da seção "sobre" — a preencher.
+   Seção "Sobre mim": coluna única centralizada (foto, texto, badges).
    ========================================================================== */
+
+.sobre {
+  padding-block: var(--space-section);
+}
+
+.sobre__inner {
+  max-width: 700px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.sobre__foto {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* Anel sutil na cor de marca + sombra suave, em vez de borda seca */
+  box-shadow:
+    0 0 0 6px color-mix(in srgb, var(--color-primary) 15%, transparent),
+    0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.sobre__texto {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.sobre__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
