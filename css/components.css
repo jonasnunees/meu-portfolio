@@ -1,0 +1,66 @@
+/* ==========================================================================
+   COMPONENTS.CSS
+   Componentes globais e reutilizáveis do site
+   ========================================================================== */
+
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  background: var(--color-primary);
+  color: #fff;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+
+  transition:
+    opacity .25s,
+    transform .25s,
+    visibility .25s;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* Clareia o ícone caso ele seja preto no arquivo SVG */
+[data-theme="dark"] .back-to-top img {
+  filter: brightness(0) invert(1);
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 40%, white);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
+  }
+}

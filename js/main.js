@@ -36,3 +36,26 @@ mainNav.querySelectorAll('a').forEach((link) => {
     menuToggle.setAttribute('aria-expanded', 'false');
   });
 });
+
+// ==========================================================================
+// Botão "Voltar ao topo"
+// ==========================================================================
+
+const backToTopButton = document.getElementById('back-to-top');
+
+// Exibe o botão após 600px de rolagem
+window.addEventListener('scroll', () => {
+  backToTopButton.classList.toggle('is-visible', window.scrollY > 600);
+});
+
+// Retorna ao topo da página
+backToTopButton.addEventListener('click', () => {
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  window.scrollTo({
+    top: 0,
+    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+  });
+});
