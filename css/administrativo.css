@@ -30,12 +30,27 @@
 }
 
 .card__icon {
-  width: 24px;
-  height: 24px;
-  padding: 14px;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
   border-radius: 50%;
-  background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary) 12%,
+    transparent
+  );
   margin-bottom: 1rem;
+}
+
+.card__icon img,
+.card__icon svg {
+  display: block;
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+  overflow: visible;
 }
 
 /* Clareia os ícones dos cards no tema escuro (mesmo caso da lua e das
