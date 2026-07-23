@@ -1,4 +1,175 @@
 /* ==========================================================================
    HEADER.CSS
-   Estilos da seção "header" — a preencher.
+   Cabeçalho fixo (sticky), logo cursivo, navegação desktop e menu mobile.
    ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: color-mix(in srgb, var(--color-bg) 85%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 1rem;
+}
+
+/* Logo — única aparição da fonte cursiva no site inteiro */
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ---------- Navegação (desktop) ---------- */
+.main-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-nav__list a {
+  position: relative;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+  padding-block: 0.25rem;
+  transition: color var(--transition);
+}
+
+.main-nav__list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.main-nav__list a:hover {
+  color: var(--color-primary);
+}
+
+.main-nav__list a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ---------- Ações do header (tema + menu) ---------- */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-toggle,
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color var(--transition);
+}
+
+.theme-toggle:hover,
+.menu-toggle:hover {
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.theme-toggle__icon,
+.menu-toggle__icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Força o ícone da lua a ficar branco no tema escuro, já que a cor original está gravada no SVG e não é acessível via CSS normalmente */
+[data-theme="dark"] .theme-toggle__icon--dark {
+  filter: brightness(0) invert(1);
+}
+
+/* Alterna qual ícone de tema aparece, conforme o atributo data-theme */
+.theme-toggle__icon--dark {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle__icon--light {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle__icon--dark {
+  display: block;
+}
+
+/* Alterna ícone do menu mobile (hambúrguer / fechar) conforme estado aberto */
+.menu-toggle__icon--close {
+  display: none;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon--open {
+  display: none;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon--close {
+  display: block;
+}
+
+/* O botão de menu só aparece no mobile */
+.menu-toggle {
+  display: none;
+}
+
+/* ---------- Mobile (≤768px) ---------- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    inset: 0;
+    top: 73px; /* altura aproximada do header, evita cobrir o logo/botões */
+    background-color: var(--color-bg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+  }
+
+  .main-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .main-nav__list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 2rem;
+  }
+
+  .main-nav__list a {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
