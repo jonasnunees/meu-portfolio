@@ -1,0 +1,38 @@
+// ==========================================================================
+// main.js — comportamentos globais do site
+// ==========================================================================
+
+// Alternância de tema claro/escuro
+const themeToggle = document.getElementById('theme-toggle');
+const root = document.documentElement;
+
+function applyTheme(theme) {
+  root.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+}
+
+const savedTheme = localStorage.getItem('theme')
+  || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+applyTheme(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+  const current = root.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+// Menu mobile
+const menuToggle = document.getElementById('menu-toggle');
+const mainNav = document.getElementById('main-nav');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = mainNav.classList.toggle('is-open');
+  menuToggle.setAttribute('aria-expanded', isOpen);
+});
+
+// Fecha o menu mobile ao clicar em um link
+mainNav.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    mainNav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+});
