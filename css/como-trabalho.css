@@ -1,4 +1,82 @@
 /* ==========================================================================
    COMO-TRABALHO.CSS
-   Estilos da seção "como-trabalho" — a preencher.
+   Seção "Como eu trabalho": 4 passos em sequência real, por isso os
+   marcadores numerados fazem sentido aqui (diferente de uma decoração
+   genérica) — a ordem importa e comunica um processo de verdade.
    ========================================================================== */
+
+.como-trabalho {
+  padding-block: var(--space-section);
+}
+
+.processo {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+/* Linha conectando o centro dos círculos numerados, do primeiro ao
+   último passo — aproximação visual, não precisa ser matematicamente
+   perfeita, os círculos cobrem a linha por cima */
+.processo::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background-color: color-mix(in srgb, var(--color-text) 12%, transparent);
+}
+
+.processo__item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.processo__numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+.processo__item h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.processo__item p {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  max-width: 22ch;
+}
+
+/* ---------- Mobile (≤768px): empilhado, sem a linha horizontal ---------- */
+@media (max-width: 768px) {
+  .processo {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .processo::before {
+    display: none;
+  }
+
+  .processo__item p {
+    max-width: 32ch;
+  }
+}
