@@ -1,4 +1,69 @@
 /* ==========================================================================
    ADMINISTRATIVO.CSS
-   Estilos da seção "administrativo" — a preencher.
+   Seção "Administrativo & Dados": cards compactos lado a lado — layout
+   mais simples e sóbrio de propósito, já que essa é a frente de menor
+   prioridade (diferencial de confiança, não o carro-chefe do portfólio).
    ========================================================================== */
+
+.administrativo {
+  padding-block: var(--space-section);
+}
+
+.administrativo__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -20px rgba(0, 0, 0, 0.25);
+}
+
+.card__icon {
+  width: 24px;
+  height: 24px;
+  padding: 14px;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  margin-bottom: 1rem;
+}
+
+/* Clareia os ícones dos cards no tema escuro (mesmo caso da lua e das
+   setas: a cor original está gravada no SVG) */
+[data-theme="dark"] .card__icon {
+  filter: brightness(0) invert(1);
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+/* ---------- Tablet (≤1024px): 2 colunas ---------- */
+@media (max-width: 1024px) {
+  .administrativo__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Mobile (≤768px): empilhado ---------- */
+@media (max-width: 768px) {
+  .administrativo__grid {
+    grid-template-columns: 1fr;
+  }
+}
