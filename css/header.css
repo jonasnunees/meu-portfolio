@@ -101,8 +101,10 @@
   height: 20px;
 }
 
-/* Força o ícone da lua a ficar branco no tema escuro, já que a cor original está gravada no SVG e não é acessível via CSS normalmente */
-[data-theme="dark"] .theme-toggle__icon--dark {
+/* Força os ícones a ficarem brancos no tema escuro,
+   já que a cor original está gravada no SVG */
+[data-theme="dark"] .theme-toggle__icon--dark,
+[data-theme="dark"] .menu-toggle__icon {
   filter: brightness(0) invert(1);
 }
 
@@ -139,37 +141,101 @@
 
 /* ---------- Mobile (≤768px) ---------- */
 @media (max-width: 768px) {
+  .site-header__inner {
+    padding-block: 0.875rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
   .menu-toggle {
     display: inline-flex;
+    position: relative;
+    z-index: 102;
+  }
+
+  .theme-toggle {
+    position: relative;
+    z-index: 102;
   }
 
   .main-nav {
-    position: fixed;
-    inset: 0;
-    top: 73px; /* altura aproximada do header, evita cobrir o logo/botões */
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    height: calc(100dvh - 69px);
+
     background-color: var(--color-bg);
+    border-top: 1px solid
+      color-mix(in srgb, var(--color-text) 8%, transparent);
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-8px);
-    transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+    pointer-events: none;
+
+    transform: translateY(-0.75rem);
+
+    transition:
+      opacity var(--transition),
+      transform var(--transition),
+      visibility var(--transition);
   }
 
   .main-nav.is-open {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: translateY(0);
   }
 
   .main-nav__list {
+    width: 100%;
+    min-height: 100%;
+
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    gap: 2rem;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    gap: 0;
+    margin: 0;
+    padding: 2rem 1.25rem;
+  }
+
+  .main-nav__list li {
+    width: 100%;
   }
 
   .main-nav__list a {
-    font-size: 1.5rem;
+    display: block;
+    width: 100%;
+
+    padding: 1rem 0.75rem;
+
+    font-size: 1.05rem;
     font-weight: 600;
+    text-align: left;
+
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--color-text) 8%, transparent);
+  }
+
+  .main-nav__list a::after {
+    display: none;
+  }
+
+  .main-nav__list a:hover {
+    color: var(--color-primary);
+    background-color: color-mix(
+      in srgb,
+      var(--color-primary) 8%,
+      transparent
+    );
   }
 }
