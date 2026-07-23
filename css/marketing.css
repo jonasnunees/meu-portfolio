@@ -1,4 +1,98 @@
 /* ==========================================================================
    MARKETING.CSS
-   Estilos da seção "marketing" — a preencher.
+   Seção Marketing Digital & SEO: zigue-zague invertido (conteúdo à
+   esquerda, galeria à direita), com fundo alternado para dar ritmo
+   visual em relação à seção anterior (Frontend). A galeria repete a
+   mesma composição em camadas (desktop + mobile sobrepostos) usada no
+   Frontend, três vezes: catálogo, tema Toy Story e FAQ.
    ========================================================================== */
+
+.marketing {
+  padding-block: var(--space-section);
+  background-color: var(--color-surface);
+  border-block: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+
+.marketing__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+/* ---------- Conteúdo textual ---------- */
+.marketing__block {
+  margin-bottom: 1.75rem;
+}
+
+.marketing__block h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.marketing__nota {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+/* ---------- Visual: 3 mini-mockups em camadas (desktop + mobile) ---------- */
+.marketing__visual {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* O mockup do catálogo (principal) ocupa a linha inteira;
+   Toy Story e FAQ dividem a linha de baixo lado a lado */
+.marketing__shot--main {
+  grid-column: 1 / -1;
+}
+
+.marketing__shot {
+  position: relative;
+}
+
+.marketing__image--desktop {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+  box-shadow: 0 16px 40px -20px rgba(0, 0, 0, 0.3);
+}
+
+.marketing__image--mobile {
+  position: absolute;
+  right: -16px;
+  bottom: -16px;
+  width: 28%;
+  border-radius: 10px;
+  border: 3px solid var(--color-bg);
+  box-shadow: 0 12px 30px -14px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Mobile (≤768px) ---------- */
+@media (max-width: 768px) {
+  .marketing__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Garante que a galeria apareça antes do texto, mesmo vindo depois no HTML */
+  .marketing__visual {
+    order: 1;
+  }
+
+  .marketing__content {
+    order: 2;
+  }
+
+  /* Os dois mockups secundários (Toy Story e FAQ) empilham em vez de
+     dividir a linha, já que ficariam apertados demais lado a lado */
+  .marketing__visual {
+    grid-template-columns: 1fr;
+  }
+
+  .marketing__image--mobile {
+    width: 32%;
+  }
+}
