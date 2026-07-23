@@ -1,4 +1,59 @@
 /* ==========================================================================
    CONTATO.CSS
-   Estilos da seção "contato" — a preencher.
+   Seção final de CTA: fundo em azul de marca, contraste forte para ser
+   o último "empurrão" da página.
    ========================================================================== */
+
+.contato {
+  padding-block: var(--space-section);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+  text-align: center;
+}
+
+.contato__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contato__titulo {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  max-width: 20ch;
+}
+
+/* O botão de WhatsApp aqui precisa de contraste com o fundo azul da
+   seção, então inverte as cores em relação ao botão padrão (fundo
+   branco, texto azul, em vez de fundo azul) */
+.contato .btn--whatsapp {
+  background-color: #fff;
+  color: var(--color-primary);
+}
+
+.contato .btn--whatsapp:hover {
+  background-color: color-mix(in srgb, #fff 90%, var(--color-primary));
+}
+
+.contato__redes {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.contato__redes img {
+  width: 22px;
+  height: 22px;
+  transition: opacity var(--transition);
+}
+
+.contato__redes a:hover img {
+  opacity: 0.75;
+}
+
+/* Clareia os ícones de e-mail/LinkedIn/GitHub para branco, já que essa
+   seção sempre tem fundo azul (independente do tema claro/escuro do
+   site) — diferente do fix condicional a [data-theme="dark"] usado em
+   outras seções */
+.contato__redes img {
+  filter: brightness(0) invert(1);
+}
