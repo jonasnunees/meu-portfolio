@@ -1,74 +1,91 @@
-// ==========================================================================
-// main.js — comportamentos globais do site
-// ==========================================================================
+// ========================================================================
+// main.js - comportamentos globais do site
+// ========================================================================
 
-// Alternância de tema claro/escuro
-const themeToggle = document.getElementById('theme-toggle');
 const root = document.documentElement;
+const themeToggle = document.getElementById('theme-toggle');
+const menuToggle = document.getElementById('menu-toggle');
+const mainNav = document.getElementById('main-nav');
+const backToTopButton = document.getElementById('back-to-top');
+const prefersReducedMotion = window.matchMedia(
+  '(prefers-reduced-motion: reduce)'
+).matches;
 
 function applyTheme(theme) {
   root.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
+
+  if (themeToggle) {
+    themeToggle.setAttribute('aria-pressed', theme === 'dark');
+    themeToggle.setAttribute(
+      'aria-label',
+      theme === 'dark'
+        ? 'Alternar para tema claro'
+        : 'Alternar para tema escuro'
+    );
+  }
 }
 
 const savedTheme = localStorage.getItem('theme')
   || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 applyTheme(savedTheme);
 
-themeToggle.addEventListener('click', () => {
-  const current = root.getAttribute('data-theme');
-  applyTheme(current === 'dark' ? 'light' : 'dark');
-});
-
-// Menu mobile
-const menuToggle = document.getElementById('menu-toggle');
-const mainNav = document.getElementById('main-nav');
-
-menuToggle.addEventListener('click', () => {
-  const isOpen = mainNav.classList.toggle('is-open');
-  menuToggle.setAttribute('aria-expanded', isOpen);
-});
-
-// Fecha o menu mobile ao clicar em um link
-mainNav.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    mainNav.classList.remove('is-open');
-    menuToggle.setAttribute('aria-expanded', 'false');
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    applyTheme(current === 'dark' ? 'light' : 'dark');
   });
-});
+}
 
-// ==========================================================================
-// Botão "Voltar ao topo"
-// ==========================================================================
+if (menuToggle && mainNav) {
+  const mainNavLinks = mainNav.querySelectorAll('a');
 
-const backToTopButton = document.getElementById('back-to-top');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
 
-// Exibe o botão após 600px de rolagem
-window.addEventListener('scroll', () => {
-  backToTopButton.classList.toggle('is-visible', window.scrollY > 600);
-});
-
-// Retorna ao topo da página
-backToTopButton.addEventListener('click', () => {
-  const prefersReducedMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  ).matches;
-
-  window.scrollTo({
-    top: 0,
-    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+    if (isOpen) {
+      mainNavLinks[0]?.focus();
+    } else {
+      menuToggle.focus();
+    }
   });
-});
+
+  mainNavLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.focus();
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && mainNav.classList.contains('is-open')) {
+      mainNav.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.focus();
+    }
+  });
+}
+
+if (backToTopButton) {
+  window.addEventListener('scroll', () => {
+    backToTopButton.classList.toggle('is-visible', window.scrollY > 600);
+  });
+
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth'
+    });
+  });
+}
 
 // ========================================================================
-// Animações de reveal por scroll
+// Reveal animations on scroll
 // ========================================================================
 
 if (window.AOS) {
-  const prefersReducedMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  ).matches;
-
   window.AOS.init({
     duration: 800,
     easing: 'ease-out-cubic',
