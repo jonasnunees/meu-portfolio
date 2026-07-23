@@ -1,4 +1,118 @@
 /* ==========================================================================
    HERO.CSS
-   Estilos da seção "hero" — a preencher.
+   Seção de abertura: título de impacto + mockup do case study em destaque.
    ========================================================================== */
+
+.hero {
+  /* 73px ~ altura aproximada do header sticky (ver header.css) */
+  min-height: calc(100svh - 73px);
+  display: flex;
+  align-items: center;
+  padding-block: 2.5rem;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* ---------- Conteúdo textual ---------- */
+.hero__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.hero__kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.hero__title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.hero__subtitle {
+  color: var(--color-text-secondary);
+  max-width: 42ch;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ---------- Visual: mockup de navegador ---------- */
+.hero__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.browser-frame {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--color-surface);
+  border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -20px color-mix(in srgb, var(--color-primary) 45%, transparent);
+  transform: rotate(-3deg);
+  transition: transform 0.3s ease;
+}
+
+.browser-frame:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.browser-frame__bar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px;
+  background-color: color-mix(in srgb, var(--color-text) 5%, var(--color-surface));
+}
+
+.browser-frame__bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.browser-frame__bar span:nth-child(1) { background-color: #FF5F56; }
+.browser-frame__bar span:nth-child(2) { background-color: #FFBD2E; }
+.browser-frame__bar span:nth-child(3) { background-color: #27C93F; }
+
+.browser-frame__image {
+  width: 100%;
+  display: block;
+}
+
+/* ---------- Mobile (≤768px) ---------- */
+@media (max-width: 768px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: left;
+  }
+
+  .browser-frame {
+    max-width: 320px;
+    transform: rotate(-1.5deg);
+  }
+}
