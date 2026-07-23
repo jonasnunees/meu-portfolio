@@ -20,10 +20,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
   <!-- CSS: base primeiro (tokens/reset), depois um arquivo por seção -->
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/hero.css">
@@ -75,7 +75,7 @@
     <!-- ===================== 01. HERO ===================== -->
     <section class="hero" id="hero">
       <div class="container hero__inner">
-        <div class="hero__content">
+        <div class="hero__content" data-aos="fade-up" data-aos-duration="800">
           <p class="hero__kicker">Desenvolvedor Frontend &amp; Especialista em SEO/Marketing Digital</p>
           <h1 class="hero__title">Transformo ideias em sites que aparecem no Google.</h1>
           <p class="hero__subtitle">
@@ -108,14 +108,14 @@
       <div class="container sobre__inner">
         <img src="assets/img/foto_perfil.webp" alt="Foto de Jonas Nunes" class="sobre__foto">
 
-        <p class="sobre__texto">
+        <p class="sobre__texto" data-aos="fade-up" data-aos-duration="750">
           Sou formado em Análise e Desenvolvimento de Sistemas e venho construindo minha trajetória
           na fronteira entre tecnologia, dados e comunicação digital. Hoje aplico esse conhecimento
           tanto na criação de sites e experiências web quanto na otimização de negócios locais para
           SEO — sempre buscando unir código bem estruturado a resultados reais.
         </p>
 
-        <ul class="sobre__badges">
+        <ul class="sobre__badges" data-aos="fade-up" data-aos-duration="750" data-aos-delay="100">
           <li class="badge">Português (Nativo)</li>
           <li class="badge">Inglês (Intermediário/Técnico)</li>
           <li class="badge">São Pedro da Aldeia, RJ</li>
@@ -132,10 +132,10 @@
         </div>
 
         <div class="frontend__content">
-          <p class="section-tag">Case Study</p>
+          <p class="section-tag" data-aos="fade-up">Case Study</p>
           <h2 class="section-title">Isa Criativa — Papelaria Personalizada</h2>
 
-          <div class="frontend__block">
+          <div class="frontend__block" data-aos="fade-up" data-aos-delay="120">
             <h3>O desafio</h3>
             <p>
               Posicionar um negócio local de papelaria personalizada no Google, competindo com
@@ -143,7 +143,7 @@
             </p>
           </div>
 
-          <div class="frontend__block">
+          <div class="frontend__block" data-aos="fade-up" data-aos-delay="180">
             <h3>O que desenvolvi</h3>
             <ul class="tag-list">
               <li class="tag">HTML5</li>
@@ -156,12 +156,12 @@
             </ul>
           </div>
 
-          <div class="frontend__block">
+          <div class="frontend__block" data-aos="fade-up" data-aos-delay="240">
             <h3>Resultado</h3>
             <p>Site publicado e em operação ativa, gerando contato direto via WhatsApp para orçamentos.</p>
           </div>
 
-          <div class="frontend__links">
+          <div class="frontend__links" data-aos="fade-up" data-aos-delay="300">
             <a href="https://isacriativa.com.br/" target="_blank" rel="noopener" class="link-arrow">
               Ver site ao vivo
               <img src="assets/icons/arrow-right-circle.svg" alt="">
@@ -180,9 +180,9 @@
       <div class="container marketing__inner">
         <div class="marketing__content">
           <p class="section-tag">Estratégia</p>
-          <h2 class="section-title">Marketing Digital &amp; SEO</h2>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Marketing Digital &amp; SEO</h2>
 
-          <div class="marketing__block">
+          <div class="marketing__block" data-aos="fade-up" data-aos-delay="120">
             <h3>Estratégia de SEO aplicada (Isa Criativa)</h3>
             <ul class="check-list">
               <li>Palavra-chave geográfica no title e na meta description</li>
@@ -193,7 +193,7 @@
             </ul>
           </div>
 
-          <div class="marketing__block">
+          <div class="marketing__block" data-aos="fade-up" data-aos-delay="180">
             <h3>Ferramentas de criação</h3>
             <ul class="tag-list">
               <li class="tag">Canva</li>
@@ -227,11 +227,11 @@
     <!-- ===================== 05. ADMINISTRATIVO & DADOS ===================== -->
     <section class="administrativo" id="administrativo">
       <div class="container">
-        <p class="section-tag">Diferencial</p>
-        <h2 class="section-title">Administrativo &amp; Dados</h2>
+        <p class="section-tag" data-aos="fade-up">Diferencial</p>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Administrativo &amp; Dados</h2>
 
         <div class="administrativo__grid">
-          <div class="card">
+          <div class="card" data-aos="fade-up" data-aos-delay="80">
             <div class="card__icon">
               <img src="assets/icons/diagram-3.svg" alt="">
             </div>
@@ -239,7 +239,7 @@
             <p>Power BI e Excel avançado para dashboards e relatórios gerenciais.</p>
           </div>
 
-          <div class="card">
+          <div class="card" data-aos="fade-up" data-aos-delay="160">
             <div class="card__icon">
               <img src="assets/icons/lock.svg" alt="">
             </div>
@@ -247,7 +247,7 @@
             <p>Gestão e conformidade legal de certificados digitais corporativos.</p>
           </div>
 
-          <div class="card">
+          <div class="card" data-aos="fade-up" data-aos-delay="240">
             <div class="card__icon">
               <img src="assets/icons/gear.svg" alt="">
             </div>
@@ -255,7 +255,7 @@
             <p>Organização de fluxos de trabalho via Monday e otimização operacional.</p>
           </div>
 
-          <div class="card">
+          <div class="card" data-aos="fade-up" data-aos-delay="320">
             <div class="card__icon">
               <img src="assets/icons/building.svg" alt="">
             </div>
@@ -273,12 +273,12 @@
         <h2 class="section-title">Formação &amp; Certificações</h2>
 
         <ol class="timeline">
-          <li class="timeline__item">
+          <li class="timeline__item" data-aos="fade-up" data-aos-delay="120">
             <span class="timeline__data">2022</span>
             <h3>Graduação em Análise e Desenvolvimento de Sistemas</h3>
             <p>Universidade Estácio de Sá</p>
           </li>
-          <li class="timeline__item">
+          <li class="timeline__item" data-aos="fade-up" data-aos-delay="200">
             <span class="timeline__data">Em especialização</span>
             <h3>Áreas de aprofundamento</h3>
             <ul class="tag-list timeline__tags">
@@ -295,26 +295,26 @@
     <!-- ===================== 07. COMO EU TRABALHO ===================== -->
     <section class="como-trabalho" id="como-trabalho">
       <div class="container">
-        <p class="section-tag">Processo</p>
-        <h2 class="section-title">Como eu trabalho</h2>
+        <p class="section-tag" data-aos="fade-up">Processo</p>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Como eu trabalho</h2>
 
         <ol class="processo">
-          <li class="processo__item">
+          <li class="processo__item" data-aos="fade-up" data-aos-delay="80">
             <span class="processo__numero">01</span>
             <h3>Briefing</h3>
             <p>Entendo o negócio, o público e os objetivos antes de qualquer linha de código.</p>
           </li>
-          <li class="processo__item">
+          <li class="processo__item" data-aos="fade-up" data-aos-delay="160">
             <span class="processo__numero">02</span>
             <h3>Design &amp; Aprovação</h3>
             <p>Alinhamos estrutura e visual antes de partir para o desenvolvimento.</p>
           </li>
-          <li class="processo__item">
+          <li class="processo__item" data-aos="fade-up" data-aos-delay="240">
             <span class="processo__numero">03</span>
             <h3>Desenvolvimento</h3>
             <p>Construção do site com código limpo, responsivo e performático.</p>
           </li>
-          <li class="processo__item">
+          <li class="processo__item" data-aos="fade-up" data-aos-delay="320">
             <span class="processo__numero">04</span>
             <h3>Entrega &amp; SEO</h3>
             <p>Publicação com otimizações de SEO já aplicadas desde o primeiro dia.</p>
@@ -328,12 +328,12 @@
       <div class="container contato__inner">
         <h2 class="contato__titulo">Vamos criar seu próximo site?</h2>
 
-        <a href="https://wa.me/5522981104103" target="_blank" rel="noopener" class="btn btn--whatsapp">
+        <a href="https://wa.me/5522981104103" target="_blank" rel="noopener" class="btn btn--whatsapp" data-aos="fade-up" data-aos-delay="100">
           <img src="assets/icons/whatsapp.svg" alt="" class="btn__icon">
           Falar no WhatsApp
         </a>
 
-        <ul class="contato__redes">
+        <ul class="contato__redes" data-aos="fade-up" data-aos-delay="180">
           <li>
             <a href="mailto:jonas.nunees@hotmail.com" aria-label="Enviar e-mail">
               <img src="assets/icons/envelope-at.svg" alt="">
@@ -374,6 +374,7 @@
     <img src="assets/icons/arrow-up-short.svg" alt="">
   </button>
 
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

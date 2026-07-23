@@ -59,3 +59,21 @@ backToTopButton.addEventListener('click', () => {
     behavior: prefersReducedMotion ? 'auto' : 'smooth'
   });
 });
+
+// ========================================================================
+// Animações de reveal por scroll
+// ========================================================================
+
+if (window.AOS) {
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  window.AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 80,
+    disable: prefersReducedMotion
+  });
+}
