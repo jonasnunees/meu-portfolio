@@ -58,6 +58,10 @@
   gap: 1rem;
 }
 
+.hero__actions .btn-whatsapp {
+  background-color: #fff;
+}
+
 /* ---------- Visual: mockup de navegador ---------- */
 .hero__visual {
   display: flex;

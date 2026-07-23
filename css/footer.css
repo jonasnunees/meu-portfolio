@@ -1,4 +1,40 @@
 /* ==========================================================================
    FOOTER.CSS
-   Estilos da seção "footer" — a preencher.
+   Rodapé simples: copyright + link do GitHub.
    ========================================================================== */
+
+.site-footer {
+  padding-block: 2rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+
+.site-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-footer p {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.site-footer a:hover {
+  color: var(--color-primary);
+}
+
+/* ---------- Mobile (≤480px): centraliza em vez de espaçar nas pontas ---------- */
+@media (max-width: 480px) {
+  .site-footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
