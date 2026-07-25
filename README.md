@@ -1,43 +1,49 @@
-# Portfólio - Jonas Nunes
+# Portfólio — Jonas Nunes
 
-Portfólio pessoal em página única, desenvolvido para apresentar a trajetória de Jonas Nunes nas áreas de desenvolvimento frontend, SEO e marketing digital, além da experiência em administrativo e análise de dados.
+Portfólio pessoal em página única, criado para apresentar o trabalho de Jonas Nunes com foco em desenvolvimento frontend, SEO, marketing digital e análise de dados aplicada à performance.
 
-O projeto foi pensado para funcionar como vitrine profissional e como case de apresentação para recrutadores, clientes e parceiros.
+O projeto funciona como vitrine profissional e como apresentação direta para recrutadores, clientes e parceiros.
 
-## Visão Geral
+## Objetivo
 
-O site reúne:
+Comunicar um posicionamento claro e consistente:
 
-- apresentação pessoal e resumo profissional
+- desenvolvimento de interfaces com HTML, CSS e JavaScript
+- SEO técnico e SEO local
+- marketing digital com foco em visibilidade e conversão
+- análise de dados com Excel e Power BI para apoiar decisões
+
+## O que o site reúne
+
+- hero com proposta de valor objetiva
+- resumo profissional e direção de carreira
 - case study do projeto Isa Criativa
-- destaques em SEO e marketing digital
-- experiências na área administrativa e de dados
-- formação, certificações e processo de trabalho
-- canais de contato direto
+- estratégia de marketing digital e SEO
+- seção de dados e performance
+- formação, processo de trabalho e contato
 
 ## Destaques
 
-- Layout responsivo para desktop e mobile
-- Header fixo com navegação por seções
-- Menu mobile com controle de abertura e fechamento
-- Alternância entre tema claro e escuro
-- Botão flutuante para voltar ao topo
-- Animações suaves de entrada ao rolar a página
-- Estrutura semântica voltada para acessibilidade
-- Metadados de SEO e Open Graph para compartilhamento
-- Dados estruturados em JSON-LD
-- Uso de imagens em WebP para melhor desempenho
+- layout responsivo para desktop e mobile
+- navegação semântica e acessível
+- menu mobile com controle de estado
+- alternância entre tema claro e escuro
+- botão de voltar ao topo
+- animações leves de entrada
+- metadados de SEO e Open Graph
+- dados estruturados em JSON-LD
+- imagens em WebP para melhor desempenho
 
-## Tecnologias Utilizadas
+## Tecnologias
 
 - HTML5
 - CSS3
 - JavaScript
-- [AOS - Animate On Scroll](https://michalsnik.github.io/aos/)
+- AOS — Animate On Scroll
 - Google Fonts
 - SVG e WebP
 
-## Estrutura do Projeto
+## Estrutura do projeto
 
 ```text
 meu-portfolio/
@@ -53,7 +59,7 @@ meu-portfolio/
 │   ├── sobre.css
 │   ├── frontend.css
 │   ├── marketing.css
-│   ├── administrativo.css
+│   ├── dados.css
 │   ├── formacao.css
 │   ├── como-trabalho.css
 │   ├── contato.css
@@ -64,59 +70,49 @@ meu-portfolio/
 └── README.md
 ```
 
-## Seções do Site
+## Seções do site
 
-- Hero com chamada principal e acesso rápido ao case study
-- Sobre mim com resumo da trajetória e idiomas
-- Case study do projeto Isa Criativa
-- Estratégia de marketing digital e SEO
-- Área administrativa e de dados
-- Formação e certificações
+- Hero com posicionamento principal
+- Sobre com resumo profissional
+- Case study da Isa Criativa
+- Marketing digital e SEO
+- Dados e performance
+- Formação e especializações
 - Processo de trabalho
-- Contato com WhatsApp, e-mail, LinkedIn e GitHub
+- Contato direto
 
-## Recursos de Acessibilidade
+## Acessibilidade e semântica
 
 - link de salto para o conteúdo principal
-- navegação marcada semanticamente com `nav`
+- estrutura semântica com `header`, `nav`, `main`, `section` e `footer`
 - botões com `aria-label`
-- controle de estado no menu mobile
-- respeito à preferência de redução de movimento
-- contraste e foco visível para navegação por teclado
+- navegação por teclado com foco visível
+- respeito à preferência por redução de movimento
 
-## SEO e Compartilhamento
+## SEO
 
-O projeto inclui recursos que ajudam na indexação e no compartilhamento em redes sociais:
+O site foi estruturado para reforçar o posicionamento em buscas relacionadas a:
+
+- frontend
+- desenvolvimento web
+- SEO
+- marketing digital
+- Excel
+- Power BI
+
+Inclui:
 
 - `title` e `meta description`
-- `robots`
-- `Open Graph`
-- `Twitter Card`
-- `JSON-LD` com dados do autor
-- imagens e conteúdo organizados por seções semânticas
+- `keywords`
+- Open Graph
+- Twitter Card
+- JSON-LD
 
-## Como Executar Localmente
+## Como executar
 
-Como o projeto é estático, basta abrir o arquivo `index.html` em um navegador.
+Por ser um projeto estático, basta abrir `index.html` em um navegador.
 
-Se preferir, use um servidor local como a extensão Live Server no VS Code.
-
-## Personalização
-
-Alguns pontos que podem ser adaptados facilmente:
-
-- nome e descrição profissional
-- links de contato
-- case study em destaque
-- cores e identidade visual
-- textos das seções
-- imagens e screenshots do portfólio
-
-## Observações
-
-- O site depende de recursos externos para fontes e animações.
-- As imagens foram preparadas em formato WebP para equilibrar qualidade e desempenho.
-- O projeto foi estruturado para ser simples de manter e editar.
+Se preferir, use um servidor local no VS Code.
 
 ## Contato
 

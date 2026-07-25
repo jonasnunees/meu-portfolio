@@ -1,22 +1,21 @@
 /* ==========================================================================
-   ADMINISTRATIVO.CSS
-   Seção "Administrativo & Dados": cards compactos lado a lado — layout
-   mais simples e sóbrio de propósito, já que essa é a frente de menor
-   prioridade (diferencial de confiança, não o carro-chefe do portfólio).
+   DADOS.CSS
+   Seção "Dados & Performance": cards compactos que conectam análise,
+   leitura de indicadores e tomada de decisão aplicada ao marketing.
    ========================================================================== */
 
-.administrativo {
+.dados {
   padding-block: var(--space-section);
 }
 
-.administrativo__grid {
+.dados__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
-.card {
+.dado-card {
   background-color: var(--color-surface);
   border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
   border-radius: var(--radius);
@@ -24,12 +23,12 @@
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.card:hover {
+.dado-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 32px -20px rgba(0, 0, 0, 0.25);
 }
 
-.card__icon {
+.dado-card__icon {
   width: 48px;
   height: 48px;
   flex-shrink: 0;
@@ -44,8 +43,8 @@
   margin-bottom: 1rem;
 }
 
-.card__icon img,
-.card__icon svg {
+.dado-card__icon img,
+.dado-card__icon svg {
   display: block;
   width: 21px;
   height: 21px;
@@ -53,32 +52,28 @@
   overflow: visible;
 }
 
-/* Clareia os ícones dos cards no tema escuro (mesmo caso da lua e das
-   setas: a cor original está gravada no SVG) */
-[data-theme="dark"] .card__icon {
+[data-theme="dark"] .dado-card__icon {
   filter: brightness(0) invert(1);
 }
 
-.card h3 {
+.dado-card h3 {
   font-size: 1.05rem;
   margin-bottom: 0.5rem;
 }
 
-.card p {
+.dado-card p {
   color: var(--color-text-secondary);
   font-size: 0.95rem;
 }
 
-/* ---------- Tablet (≤1024px): 2 colunas ---------- */
 @media (max-width: 1024px) {
-  .administrativo__grid {
+  .dados__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ---------- Mobile (≤768px): empilhado ---------- */
 @media (max-width: 768px) {
-  .administrativo__grid {
+  .dados__grid {
     grid-template-columns: 1fr;
   }
 }
