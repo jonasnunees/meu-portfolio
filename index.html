@@ -59,6 +59,7 @@
     <link rel="stylesheet" href="css/sobre.css" />
     <link rel="stylesheet" href="css/frontend.css" />
     <link rel="stylesheet" href="css/marketing.css" />
+    <link rel="stylesheet" href="css/resultados.css" />
     <link rel="stylesheet" href="css/dados.css" />
     <link rel="stylesheet" href="css/formacao.css" />
     <link rel="stylesheet" href="css/como-trabalho.css" />
@@ -407,7 +408,110 @@
         </div>
       </section>
 
-      <!-- ===================== 05. DADOS & PERFORMANCE ===================== -->
+      <!-- ===================== 05. RESULTADOS — CORE WEB VITALS ===================== -->
+      <section class="resultados" id="resultados">
+        <div class="container">
+          <p class="section-tag" data-aos="fade-up">Auditoria real</p>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">
+            Resultados — Core Web Vitals
+          </h2>
+          <p class="resultados__intro" data-aos="fade-up" data-aos-delay="120">
+            Números do Google PageSpeed Insights para o site da Isa Criativa,
+            auditados em <strong>25 de julho de 2026</strong>. Sem estimativa, sem
+            print editado — dá pra conferir ao vivo em
+            <a
+              href="https://pagespeed.web.dev/analysis/https-isacriativa-com-br"
+              target="_blank"
+              rel="noopener"
+            >pagespeed.web.dev</a>.
+          </p>
+
+          <!-- Cards de nota: desktop -->
+          <div class="resultados__bloco" data-aos="fade-up" data-aos-delay="160">
+            <h3>Desktop</h3>
+            <div class="resultados__grid">
+              <div class="metrica-card metrica-card--otimo">
+                <span class="metrica-card__valor">97</span>
+                <span class="metrica-card__label">Performance</span>
+              </div>
+              <div class="metrica-card metrica-card--otimo">
+                <span class="metrica-card__valor">90</span>
+                <span class="metrica-card__label">Acessibilidade</span>
+              </div>
+              <div class="metrica-card metrica-card--otimo">
+                <span class="metrica-card__valor">100</span>
+                <span class="metrica-card__label">Boas Práticas</span>
+              </div>
+              <div class="metrica-card metrica-card--otimo">
+                <span class="metrica-card__valor">100</span>
+                <span class="metrica-card__label">SEO</span>
+              </div>
+            </div>
+            <p class="resultados__nota">
+              LCP de 1.1s e CLS de 0.001 — carregamento rápido e sem elementos
+              "pulando" na tela.
+            </p>
+          </div>
+
+          <!-- Cards de nota: mobile -->
+          <div class="resultados__bloco" data-aos="fade-up" data-aos-delay="240">
+            <h3>Mobile</h3>
+            <div class="resultados__grid">
+              <div class="metrica-card metrica-card--atencao">
+                <span class="metrica-card__valor">75</span>
+                <span class="metrica-card__label">Performance</span>
+              </div>
+              <div class="metrica-card metrica-card--otimo">
+                <span class="metrica-card__valor">100</span>
+                <span class="metrica-card__label">Acessibilidade</span>
+              </div>
+              <div class="metrica-card metrica-card--otimo">
+                <span class="metrica-card__valor">100</span>
+                <span class="metrica-card__label">Boas Práticas</span>
+              </div>
+              <div class="metrica-card metrica-card--otimo">
+                <span class="metrica-card__valor">100</span>
+                <span class="metrica-card__label">SEO</span>
+              </div>
+            </div>
+            <p class="resultados__nota">
+              LCP de 5.5s no mobile — abaixo do ideal. Diagnóstico já mapeado:
+              principal ganho está em otimização de imagens (~295 KiB) e redução de
+              JavaScript não utilizado (~137 KiB). Próximo ciclo de ajuste.
+            </p>
+          </div>
+
+          <!-- Prints do relatório -->
+          <div class="resultados__prints" data-aos="fade-up" data-aos-delay="300">
+            <div class="browser-frame">
+              <div class="browser-frame__bar"><span></span><span></span><span></span></div>
+              <img
+                src="assets/img/pagespeed-desktop.webp"
+                alt="Relatório do Google PageSpeed Insights para Isa Criativa, versão desktop, com notas 97 em Performance, 90 em Acessibilidade e 100 em Boas Práticas e SEO"
+                class="resultados__image"
+              />
+            </div>
+            <div class="browser-frame">
+              <div class="browser-frame__bar"><span></span><span></span><span></span></div>
+              <img
+                src="assets/img/pagespeed-mobile.webp"
+                alt="Relatório do Google PageSpeed Insights para Isa Criativa, versão mobile, com nota 75 em Performance e 100 em Acessibilidade, Boas Práticas e SEO"
+                class="resultados__image"
+              />
+            </div>
+          </div>
+
+          <p class="resultados__contexto" data-aos="fade-up" data-aos-delay="360">
+            O site está no ar há pouco tempo e ainda em fase de indexação — o
+            catálogo por temas passou por correções recentes e aguarda reprocessamento
+            pelo Google. Por isso, ainda não há dados de tráfego ou conversão para
+            compartilhar publicamente. Assim que o Search Console tiver volume
+            relevante, essa seção será atualizada com números de busca.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================== 06. DADOS & PERFORMANCE ===================== -->
       <section class="dados" id="dados">
         <div class="container">
           <p class="section-tag" data-aos="fade-up">Performance</p>
@@ -463,7 +567,7 @@
         </div>
       </section>
 
-      <!-- ===================== 06. FORMAÇÃO & CERTIFICAÇÕES ===================== -->
+      <!-- ===================== 07. FORMAÇÃO & CERTIFICAÇÕES ===================== -->
       <section class="formacao" id="formacao">
         <div class="container">
           <p class="section-tag">Trajetória</p>
@@ -477,7 +581,7 @@
             </li>
             <li class="timeline__item" data-aos="fade-up" data-aos-delay="200">
               <span class="timeline__data">Em especialização</span>
-              <h3>Áreas de aprofundamento</h3>
+              <h3>Áreas de aprofundamento contínuo</h3>
               <ul class="tag-list timeline__tags">
                 <li class="tag">HTML, CSS e JS</li>
                 <li class="tag">Wordpress</li>
@@ -491,7 +595,7 @@
         </div>
       </section>
 
-      <!-- ===================== 07. COMO EU TRABALHO ===================== -->
+      <!-- ===================== 08. COMO EU TRABALHO ===================== -->
       <section class="como-trabalho" id="como-trabalho">
         <div class="container">
           <p class="section-tag" data-aos="fade-up">Processo</p>
@@ -536,7 +640,7 @@
         </div>
       </section>
 
-      <!-- ===================== 08. CONTATO ===================== -->
+      <!-- ===================== 09. CONTATO ===================== -->
       <section class="contato" id="contato">
         <div class="container contato__inner">
           <h2 class="contato__titulo">Vamos criar um site com foco em resultado?</h2>
