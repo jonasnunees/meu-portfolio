@@ -6,6 +6,8 @@
 
 .dados {
   padding-block: var(--space-section);
+  background-color: var(--color-surface);
+  border-block: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
 }
 
 .dados__grid {

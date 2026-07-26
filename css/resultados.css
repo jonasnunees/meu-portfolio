@@ -6,8 +6,7 @@
 
 .resultados {
   padding-block: var(--space-section);
-  background-color: var(--color-surface);
-  border-block: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+  background-color: var(--color-bg);
 }
 
 .resultados__intro,
@@ -51,7 +50,7 @@
   justify-content: center;
   gap: 0.35rem;
   padding: 1.35rem 1rem;
-  background-color: var(--color-bg);
+  background-color: var(--color-surface);
   border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
   border-radius: var(--radius);
   transition: transform var(--transition), box-shadow var(--transition);
